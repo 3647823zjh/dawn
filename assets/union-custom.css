@@ -1,11 +1,11 @@
 /* Union Valve custom styles */
 
-/* Keep Dawn product media + info columns stable for industrial product data */
+/* AVONE-style B2B product layout */
 @media screen and (min-width: 990px) {
   .product.grid {
     display: grid;
-    grid-template-columns: minmax(420px, 42%) minmax(0, 58%);
-    column-gap: 4rem;
+    grid-template-columns: minmax(420px, 46%) minmax(360px, 54%);
+    column-gap: 5rem;
     align-items: start;
   }
 
@@ -19,7 +19,27 @@
   }
 }
 
-/* Product technical table display fix */
+/* Move description below two-column layout */
+.product__info-wrapper .product__description {
+  clear: both;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 990px) {
+  .product__info-wrapper .product__description {
+    position: relative;
+    left: calc(-1 * (46% + 5rem));
+    width: calc(100% + 46% + 5rem);
+    max-width: calc(100vw - 10rem);
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(var(--color-foreground), 0.12);
+  }
+}
+
+/* Product technical tables */
 .product__description,
 .product__description .rte,
 .product__info-container .rte {
@@ -32,6 +52,12 @@
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 0.8rem;
+}
+
+.product__description h2,
+.product__description h3 {
+  margin-top: 3.2rem;
+  margin-bottom: 1.6rem;
 }
 
 .product__description table,
@@ -61,7 +87,7 @@
   font-weight: 600;
 }
 
-/* Large dimension tables: allow horizontal scroll only when truly necessary */
+/* Large dimensions table */
 .product__description table:has(th:nth-child(7)),
 .product__description table:has(td:nth-child(7)),
 .product__info-container .rte table:has(th:nth-child(7)),
