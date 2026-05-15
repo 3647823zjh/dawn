@@ -1,0 +1,45 @@
+/* Union Valve custom styles */
+
+/* Product technical table overflow fix */
+.product__description,
+.product__description .rte,
+.rte {
+  max-width: 100%;
+}
+
+.product__description {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product__description table,
+.product__description .rte table,
+.product__info-container .rte table,
+.rte table {
+  width: max-content;
+  min-width: 100%;
+  max-width: none;
+  border-collapse: collapse;
+}
+
+.product__description table th,
+.product__description table td,
+.product__info-container .rte table th,
+.product__info-container .rte table td,
+.rte table th,
+.rte table td {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 989px) {
+  .product__description table th,
+  .product__description table td,
+  .product__info-container .rte table th,
+  .product__info-container .rte table td,
+  .rte table th,
+  .rte table td {
+    padding: 0.9rem 1.1rem;
+    font-size: 1.3rem;
+  }
+}
